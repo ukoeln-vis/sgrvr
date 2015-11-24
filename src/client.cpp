@@ -358,7 +358,8 @@ void renderer::on_display()
 
     auto vp = rend->cam.get_viewport();
 
-    auto sparams = make_sched_params<pixel_sampler::jittered_blend_type>(
+    auto sparams = make_sched_params(
+            pixel_sampler::jittered_blend_type{},
             rend->cam,
 //            mv, pr, vp,
             rend->host_rt
